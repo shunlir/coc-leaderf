@@ -1,0 +1,50 @@
+*coc-leaderf.txt*
+
+===============================================================================
+Contents ~
+
+ 1. Introduction                            |coc-leaderf-introduction|
+ 2. Rationale                               |coc-leaderf-rationale|
+ 3. Installation                            |coc-leaderf-installation|
+ 4. License                                 |coc-leaderf-license|
+ 5. References                              |coc-leaderf-references|
+
+===============================================================================
+                                                         *coc-leaderf-introduction*
+Introduction ~
+
+Use LeaderF [1] instead of coc.nvim [2] built-in fuzzy finder.
+
+===============================================================================
+                                                            *coc-leaderf-rationale*
+Rationale ~
+
+This plugin uses LeaderF [1] fuzzy finder in place of Coc [2]'s Coc's jumps
+(definition, reference etc).
+
+It was inspired by coc-fzf.
+
+===============================================================================
+                                                         *coc-leaderf-installation*
+Installation ~
+
+Make sure to have the following plugins in your **vimrc**:
+>
+  Plug 'Yggdroot/LeaderF', { 'do': 'LeaderfInstallCExtension' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'shunlir/coc-leaderf'
+
+===============================================================================
+                                                              *coc-leaderf-license*
+License ~
+
+MIT
+
+===============================================================================
+                                                           *coc-leaderf-references*
+References ~
+
+[1] https://github.com/Yggdroot/LeaderF
+[2] https://github.com/neoclide/coc.nvim
+
+vim: ft=help
