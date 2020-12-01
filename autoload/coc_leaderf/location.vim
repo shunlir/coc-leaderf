@@ -6,11 +6,11 @@ function! coc_leaderf#location#run(args) abort
 
 function! s:format_coc_location(item) abort
   " in:  'filename' |'lnum' | 'col'| 'text'
-  " out: 'filename':'lnum':'text'
+  " out: 'filename':'lnum':'col':'text'
   let cwd = getcwd()
   let filename = substitute(a:item.filename, l:cwd . "/", "", "")
   return  filename .
-        \ printf(':%d:', a:item.lnum) .
+        \ printf(':%d:%d:', a:item.lnum, a:item.col) .
         \ a:item.text
 endfunction
 
@@ -27,8 +27,10 @@ function! coc_leaderf#location#accept(line, args) abort
     let items = split(a:line, ':')
     let file = items[0]
     let line = items[1]
+    let col = items[2]
     exec "edit +".line." ".file
     norm! zz
+    call cursor(line, col)
     setlocal cursorline!
     redraw
     sleep 100m
